@@ -1,0 +1,24 @@
+.main {
+  background-color: red;
+}
+.container {
+  display: grid;
+  grid-template-columns: 280px auto 307px 280px;
+  grid-template-rows: 120px auto 100px;
+  grid-template-areas:
+    "header header header header"
+    ". main aside ."
+    "footer footer footer footer";
+}
+.item_a {
+  grid-area: header;
+}
+.item_b {
+  grid-area: "main";
+}
+.item_c {
+  grid-area: "aside";
+}
+.item_d {
+  grid-area: "footer";
+}
