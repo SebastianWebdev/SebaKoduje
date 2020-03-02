@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600&display=swap&subset=latin-ext");
+body {
+  font-family: "Poppins", sans-serif;
+  color: #131313;
+}
+* {
+  font-family: "Poppins", sans-serif;
+}
+/* fonts*/
+h1 {
+  font-size: 4.8rem;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}

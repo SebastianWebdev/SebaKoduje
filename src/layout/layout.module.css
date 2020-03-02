@@ -6,7 +6,7 @@
   min-height: 100vh;
   display: grid;
   grid-template-columns: 280px auto 307px 280px;
-  grid-template-rows: 120px auto 100px;
+  grid-template-rows: 160px auto 100px;
   grid-template-areas:
     "header header header header"
     ". main aside ."
