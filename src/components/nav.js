@@ -12,19 +12,19 @@ const Nav = props => (
       </li>
       <li>
         {" "}
-        <Link className={styles.item} to="/">
+        <Link className={styles.item} to="/Projects">
           Projekty
         </Link>
       </li>
       <li>
         {" "}
-        <Link className={styles.item} to="/">
+        <Link className={styles.item} to="/About">
           O mnie
         </Link>
       </li>
       <li>
         {" "}
-        <Link className={styles.item} to="/">
+        <Link className={styles.item} to="/Contact">
           Kontakt
         </Link>
       </li>

@@ -1,9 +1,10 @@
 import React from "react"
-
+import MainSlider from "./MainSlider"
+import styles from "../styles/content.module.css"
 const Content = props => (
-  <>
-    <h1>Content</h1>
-  </>
+  <section className={styles.section}>
+    <MainSlider />
+  </section>
 )
 
 export default Content
