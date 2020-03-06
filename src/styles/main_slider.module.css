@@ -10,7 +10,7 @@
   flex-shrink: 0;
 }
 .text {
-  flex-basis: 60%;
+  flex-grow: 1;
   border-top: 1px solid #e2e2e2;
   border-bottom: 1px solid #e2e2e2;
   border-right: 1px solid #e2e2e2;
