@@ -1,9 +1,8 @@
 import React from "react"
 
 import { useStaticQuery, graphql } from "gatsby"
-
-import styles from "../styles/card.module.css"
 import Img from "gatsby-image"
+import styles from "../styles/card.module.css"
 
 const Card = ({ data }) => {
   const img = useStaticQuery(graphql`

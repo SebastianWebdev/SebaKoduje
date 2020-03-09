@@ -1,0 +1,24 @@
+.img {
+  min-width: 400px;
+  background-color: purple;
+  flex-shrink: 0;
+}
+.text {
+  min-height: 100%;
+  flex-grow: 1;
+  flex-shrink: 0;
+  border-top: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
+  border-right: 1px solid #e2e2e2;
+}
+.container {
+  display: flex;
+  width: 950px;
+  flex-shrink: 0;
+}
+.tags_wrap {
+  top: 0;
+  left: 0;
+  display: flex;
+  z-index: 1;
+}

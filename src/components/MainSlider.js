@@ -1,17 +1,98 @@
 import React from "react"
 import styles from "../styles/main_slider.module.css"
-import Image from "./image"
-const MainSlider = props => (
-  <div className={styles.container}>
-    <div className={styles.img}>
-      <Image />
+
+import Slide from "./Slide.js"
+import { Carousel } from "react-bootstrap"
+
+import { useStaticQuery, graphql } from "gatsby"
+const data = {
+  articles: [
+    {
+      tittle: "Tytuł artykułu 1",
+      desc:
+        "W tym artykule dokonamy przeglądu metod i najpopularniejszych bramek płatności internetowych jakie możemy wykorzystać w swoim",
+      date: "01 luty 2020",
+      tags: ["Poradniki", "JavaScript", "Algorytmy"],
+      id: "some id",
+      slug: "1",
+      img: { path: "simon-matzinger-twukN12EN7c-unsplash.jpg" },
+    },
+    {
+      tittle: "Tytuł artykułu 1",
+      desc:
+        "W tym artykule dokonamy przeglądu metod i najpopularniejszych bramek płatności internetowych jakie możemy wykorzystać w swoim",
+      date: "01 luty 2020",
+      tags: ["Poradniki", "JavaScript", "Algorytmy"],
+      id: "some id",
+      slug: "2",
+      img: { path: "simon-matzinger-twukN12EN7c-unsplash.jpg" },
+    },
+    {
+      tittle: "Tytuł artykułu 2",
+      desc:
+        "W tym artykule dokonamy przeglądu metod i najpopularniejszych bramek płatności internetowych jakie możemy wykorzystać w swoim",
+      date: "01 luty 2019",
+      tags: ["JavaScript", "Algorytmy"],
+      id: "some id",
+      slug: "3",
+      img: { path: "simon-matzinger-twukN12EN7c-unsplash.jpg" },
+    },
+    {
+      tittle: "Tytuł artykułu 3",
+      desc:
+        "W tym artykule dokonamy przeglądu metod i najpopularniejszych bramek płatności internetowych jakie możemy wykorzystać w swoim",
+      date: "31 luty 2020",
+      tags: ["Poradniki"],
+      id: "some id",
+      slug: "4",
+      img: { path: "simon-matzinger-twukN12EN7c-unsplash.jpg" },
+    },
+  ],
+}
+
+const MainSlider = props => {
+  const posts = useStaticQuery(graphql`
+    query {
+      gcms {
+        posts {
+          content {
+            html
+          }
+          date
+          description
+          slug
+          id
+          tags
+          tittle
+          cover {
+            url
+          }
+          author {
+            name
+          }
+        }
+      }
+    }
+  `).gcms.posts
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.slide_container}>
+        <Carousel controls={false} fade={true}>
+          {posts.map(item => (
+            <Carousel.Item>
+              <Slide data={item} />
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      </div>
+
+      <div className={styles.dots}></div>
     </div>
-    <div className={styles.text}></div>
-  </div>
-)
+  )
+}
 export default MainSlider
-//rebuild slider, need slide node between container and img and text elements. slide is a slider item its a wrapper for rest of items.
-// nead to create dots to show what slide is active.
-// make a slide external react component.
-// generate slides from external data surce.
-// Check if static image querry will be better over fluid parameter.
+/*
+slidaer z bootstrap
+graphCMS połączony
+*/
