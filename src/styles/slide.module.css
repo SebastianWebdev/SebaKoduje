@@ -2,6 +2,8 @@
   min-width: 400px;
   background-color: purple;
   flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
 }
 .text {
   min-height: 100%;
@@ -15,10 +17,20 @@
   display: flex;
   width: 950px;
   flex-shrink: 0;
+  height: 260px;
 }
 .tags_wrap {
   top: 0;
   left: 0;
   display: flex;
   z-index: 1;
+  width: 100%;
+  justify-content: center;
+}
+.tag {
+  background-color: #fff;
+  padding: 2px 20px;
+  margin-right: 10px;
+  font-size: 1.2rem;
+  font-weight: 300;
 }

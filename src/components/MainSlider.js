@@ -86,8 +86,6 @@ const MainSlider = props => {
           ))}
         </Carousel>
       </div>
-
-      <div className={styles.dots}></div>
     </div>
   )
 }
