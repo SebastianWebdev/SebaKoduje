@@ -40,3 +40,16 @@ h3 {
 .carousel-indicators {
   bottom: -55px;
 }
+/* ----------------------------fonts*/
+.tittle {
+  font-weight: 300;
+  font-size: 1.8rem;
+}
+.description {
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+/*----------------------------Aligments*/
+.vertical--center {
+  align-items: center;
+}

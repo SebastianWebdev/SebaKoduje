@@ -29,8 +29,8 @@ const Card = ({ data }) => {
       </div>
       <div className={styles.card_content_wrap}>
         <h4 className={styles.card_date}>{data.date}</h4>
-        <h2 className={styles.tittle}>{data.tittle}</h2>
-        <p className={styles.description}>{data.desc}</p>
+        <h2 className={`tittle`}>{data.tittle}</h2>
+        <p className={`description`}>{data.desc}</p>
       </div>
     </div>
   )

@@ -78,7 +78,7 @@ const MainSlider = props => {
   return (
     <div className={styles.container}>
       <div className={styles.slide_container}>
-        <Carousel controls={false} fade={true}>
+        <Carousel controls={false} fade={false}>
           {posts.map(item => (
             <Carousel.Item>
               <Slide data={item} />

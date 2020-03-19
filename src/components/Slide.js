@@ -8,19 +8,6 @@ import Img from "gatsby-image"
 console.log(moment)*/
 
 const Slide = ({ data }) => {
-  const img = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(
-        relativePath: { eq: "simon-matzinger-twukN12EN7c-unsplash.jpg" }
-      ) {
-        childImageSharp {
-          fluid(maxWidth: 400) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
   //console.log(data)
   const { tags, tittle, cover, description, date } = data
   const ParseDate = new Date(date)
@@ -45,6 +32,8 @@ const Slide = ({ data }) => {
         <p className={styles.date}>
           {day} {month} {year}
         </p>
+        <p className={`tittle`}>{tittle}</p>
+        <p className={`description`}>{description}</p>
       </div>
     </div>
   )
