@@ -1,5 +1,13 @@
 .img__container {
-  border: 1px solid gray;
-  width: 60%;
-  height: 250px;
+  border: 1px solid #e2e2e2;
+  width: 100px;
+  height: 120px;
+  margin-bottom: 1.45rem;
+}
+.text_container {
+  /*margin-bottom: 1.45rem;*/
+  text-align: center;
+}
+.tittle {
+  align-self: start;
 }
