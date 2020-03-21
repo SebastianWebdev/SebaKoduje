@@ -53,3 +53,17 @@ h3 {
 .vertical--center {
   align-items: center;
 }
+a:hover {
+  text-decoration: none;
+  color: #149da2;
+}
+a.active {
+  color: #149da2;
+  border-bottom: 1px solid #149da2;
+
+  /*border: 1px solid gray;*/
+  /*padding: 3px 5px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px #949494, -2px -2px 4px #f3f3f3;
+  /*background: linear-gradient(135deg, #ffffff, #f3f3f3);*/
+}

@@ -13,7 +13,7 @@ export default function AboutBlog(props) {
         SebaKoduje to blog o tym, co ale nie o tym co nie. Będzie tutaj to i
         tamto a nawet i owo. Jak coś robic i jak nie robić
       </p>
-      <Underline styles={underlineStyles} />
+      <Underline styles={underlineStyles} CustomClass={props.underlLineClass} />
     </div>
   )
 }

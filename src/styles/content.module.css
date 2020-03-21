@@ -4,4 +4,16 @@
 }
 .slider_wrap {
   grid-area: slider;
+  display: none;
+}
+
+@media (max-width: 996px) {
+  .section {
+    padding-right: 0px;
+  }
+}
+@media (min-width: 768px) {
+  .slider_wrap {
+    display: block;
+  }
 }

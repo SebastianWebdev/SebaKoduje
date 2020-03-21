@@ -19,7 +19,7 @@ export default function AboutMe(props) {
         </p>
       </div>
       <ButtonSimple text="Więcej" />
-      <Underline styles={underlineStyles} />
+      <Underline styles={underlineStyles} CustomClass={props.underlLineClass} />
     </div>
   )
 }

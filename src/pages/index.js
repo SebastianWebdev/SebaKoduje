@@ -5,11 +5,13 @@ import Content from "../components/Content"
 
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <Content />
-  </Layout>
-)
+const IndexPage = () => {
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <Content />
+    </Layout>
+  )
+}
 
 export default IndexPage
