@@ -51,3 +51,8 @@
   font-size: 1rem;
   letter-spacing: 1px;
 }
+@media (max-width: 480px) {
+  .container {
+    max-width: 280px;
+  }
+}

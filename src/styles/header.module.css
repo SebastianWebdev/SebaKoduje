@@ -19,6 +19,14 @@
 }
 .icon {
   font-size: 3rem;
-  color: #575757;
+  color: #b5b5b5;
   margin-right: 10px;
+}
+@media (max-width: 480px) {
+  .tittle {
+    margin: 10px;
+  }
+  .icon {
+    font-size: 2.8rem;
+  }
 }

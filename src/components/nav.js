@@ -1,13 +1,23 @@
-import React from "react"
+import React, { useState } from "react"
 import styles from "../styles/nav.module.css"
 import { Link } from "gatsby"
 
 const Nav = props => {
   const url = window.location.pathname
   console.log(url)
-
+  const [isNavOpen, setIsNavOpen] = useState(false)
+  const handleNavButton = e => {
+    setIsNavOpen(!isNavOpen)
+  }
   return (
-    <nav className={`${styles.container} ${styles.open}`}>
+    <nav className={`${styles.container} ${isNavOpen ? styles.open : ""}`}>
+      <div
+        onClick={handleNavButton}
+        className={`${styles.mobile_close} ${!isNavOpen ? styles.open : ""}`}
+      >
+        <div className={styles.bar}></div>
+        <div className={styles.bar}></div>
+      </div>
       <ul className={styles.menu}>
         <li>
           <Link
@@ -42,6 +52,13 @@ const Nav = props => {
           </Link>
         </li>
       </ul>
+
+      <button
+        onClick={handleNavButton}
+        className={`${styles.mobile_open_btn} ${isNavOpen ? styles.open : ""}`}
+      >
+        Menu
+      </button>
     </nav>
   )
 }
