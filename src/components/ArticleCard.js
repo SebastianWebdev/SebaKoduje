@@ -4,33 +4,33 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import styles from "../styles/card.module.css"
 
+import Moment from "react-moment"
+import "moment/locale/pl"
 const Card = ({ data }) => {
-  const img = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "redy.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 400) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
+  console.log(data)
 
   return (
     <div className={styles.container}>
       <div className={styles.tags_wrap}>
-        {data.tags.map(item => (
-          <div className={styles.tag}>{item}</div>
+        {data.tagi.map(item => (
+          <div key={item.id} className={styles.tag}>
+            {item.tagName}
+          </div>
         ))}
       </div>
       <div className={styles.img_wrap}>
-        <Img fluid={img.placeholderImage.childImageSharp.fluid} />
+        <img src={data.cover.url} alt="" />
       </div>
       <div className={styles.card_content_wrap}>
-        <h4 className={styles.card_date}>{data.date}</h4>
+        <h4 className={styles.card_date}>
+          {
+            <Moment locale="pl" format={"DD MMMM YYYY"}>
+              {data.date}
+            </Moment>
+          }
+        </h4>
         <h2 className={`tittle`}>{data.tittle}</h2>
-        <p className={`description`}>{data.desc}</p>
+        <p className={`description`}>{data.description}</p>
       </div>
     </div>
   )

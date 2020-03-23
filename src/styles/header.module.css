@@ -19,7 +19,8 @@
 }
 .icon {
   font-size: 3rem;
-  color: #b5b5b5;
+  /*color: #b5b5b5;*/
+  color: #b9a36d;
   margin-right: 10px;
 }
 @media (max-width: 480px) {

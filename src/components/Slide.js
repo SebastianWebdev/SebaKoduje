@@ -1,19 +1,13 @@
 import React from "react"
 import styles from "../styles/slide.module.css"
 
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
-/*import moment from "moment"
-
-console.log(moment)*/
+import Moment from "react-moment"
+import "moment/locale/pl"
 
 const Slide = ({ data }) => {
   //console.log(data)
-  const { tags, tittle, cover, description, date } = data
-  const ParseDate = new Date(date)
-  const day = ParseDate.getDay()
-  const month = ParseDate.getMonth()
-  const year = ParseDate.getFullYear()
+  const { tagi, tittle, cover, description, date } = data
+
   //console.log(day, month, year)
 
   return (
@@ -23,14 +17,18 @@ const Slide = ({ data }) => {
         style={{ backgroundImage: `url(${cover.url})` }}
       >
         <div className={styles.tags_wrap}>
-          {tags.map(item => (
-            <div className={styles.tag}>{item}</div>
+          {tagi.map(item => (
+            <div key={item.id} className={styles.tag}>
+              {item.tagName}
+            </div>
           ))}
         </div>
       </div>
       <div className={styles.text}>
         <p className={styles.date}>
-          {day} {month} {year}
+          <Moment locale="pl" format={"DD MMMM YYYY"}>
+            {date}
+          </Moment>
         </p>
         <p className={`tittle`}>{tittle}</p>
         <p className={`description`}>{description}</p>
