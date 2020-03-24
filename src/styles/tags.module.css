@@ -21,3 +21,10 @@
   padding: 0;
   margin: 0;
 }
+.tag.active {
+  background-color: #9fbabf;
+  color: white;
+}
+.tag.down {
+  transform: scale(0.9);
+}
