@@ -1,14 +1,12 @@
 import React from "react"
+import { Link } from "gatsby"
 
-import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import styles from "../styles/card.module.css"
 
 import Moment from "react-moment"
 import "moment/locale/pl"
-const Card = ({ data }) => {
-  console.log(data)
-
+const Card = ({ data, img }) => {
   return (
     <div className={styles.container}>
       <div className={styles.tags_wrap}>
@@ -19,7 +17,7 @@ const Card = ({ data }) => {
         ))}
       </div>
       <div className={styles.img_wrap}>
-        <img src={data.cover.url} alt="" />
+        <Img fluid={img.childImageSharp.fluid} />
       </div>
       <div className={styles.card_content_wrap}>
         <h4 className={styles.card_date}>
@@ -29,10 +27,13 @@ const Card = ({ data }) => {
             </Moment>
           }
         </h4>
-        <h2 className={`tittle`}>{data.tittle}</h2>
+        <Link to={`/${data.slug}`}>
+          <h2 className={`tittle`}>{data.tittle}</h2>
+        </Link>
         <p className={`description`}>{data.description}</p>
       </div>
     </div>
   )
 }
 export default Card
+/* */

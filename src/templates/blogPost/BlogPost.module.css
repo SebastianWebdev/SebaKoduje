@@ -1,0 +1,18 @@
+.post_info {
+  display: flex;
+}
+.post_info p {
+  margin-right: 30px;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.tag {
+  margin-right: 30px;
+}
+.tittle {
+  text-align: center;
+  font-weight: 300;
+}

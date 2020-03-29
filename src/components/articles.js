@@ -2,33 +2,51 @@ import React from "react"
 import styles from "../styles/articles.module.css"
 import Card from "./ArticleCard"
 import { useStaticQuery, graphql } from "gatsby"
-
+//import Image from "./image"
 const Articles = props => {
-  const posts = useStaticQuery(graphql`
+  const post2 = useStaticQuery(graphql`
     query {
-      gcms {
-        posts {
-          date
+      allPost {
+        nodes {
+          author {
+            bibliography
+            name
+            id
+          }
+          date(formatString: "")
           description
           id
           slug
-          tittle
           tagi {
             tagName
           }
-          cover {
-            url
+          tittle
+        }
+      }
+      allFile {
+        nodes {
+          childImageSharp {
+            fluid(maxWidth: 400) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+          parent {
+            id
           }
         }
       }
     }
-  `).gcms.posts
+  `)
 
   return (
     <section className={`${props.className} ${styles.articles}`}>
-      {posts.map(post => (
-        <Card key={post.id} data={post} />
-      ))}
+      {post2.allPost.nodes.map(post => {
+        const img = post2.allFile.nodes.filter(
+          item => item.parent.id === post.id
+        )[0]
+
+        return <Card img={img} key={post.id} data={post} />
+      })}
     </section>
   )
 }

@@ -1,18 +1,39 @@
 module.exports = {
   siteMetadata: {
     title: `Seba Koduje`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: ``,
     author: `Sebastian Gołębiowski`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-source-graphcms`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        endpoint: `https://api-euwest.graphcms.com/v1/ck5xodpw122y501fgh12y4iky/master`,
+        query: `{ posts {
+          author{
+            bibliography
+            id
+            name
+          }
+          content {
+            html
+          }
+          date
+          description
+          id
+          slug
+          tittle
+          isPopular
+          tagi {
+            tagName
+          }
+          cover {
+            url
+          }
+        }}`,
       },
     },
+    `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -27,7 +48,7 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-source-graphql`,
+
     {
       resolve: "gatsby-source-graphql",
       options: {

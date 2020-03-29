@@ -30,6 +30,7 @@
 .item_d {
   grid-area: footer;
 }
+
 /*Tablets*/
 @media (max-width: 1366px) {
   .container {
