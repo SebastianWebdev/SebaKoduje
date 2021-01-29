@@ -10,7 +10,6 @@ exports.onCreateNode = async ({
   createNodeId,
 }) => {
   if (node.internal.type === "post") {
-    console.log(node)
     let fileNode = await createRemoteFileNode({
       url: node.cover.url,
       parentNodeId: node.id,
@@ -21,6 +20,7 @@ exports.onCreateNode = async ({
     })
   }
 }
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const postTemplate = path.resolve("src/templates/blogPost/BlogPost.js")
@@ -42,6 +42,7 @@ exports.createPages = async ({ graphql, actions }) => {
           slug
           tagi {
             tagName
+            id
           }
           tittle
         }

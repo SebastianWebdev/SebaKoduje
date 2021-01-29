@@ -15,6 +15,7 @@ const MainSlider = props => {
             url
           }
           date
+          tittle
           description
           id
           isPopular
@@ -27,6 +28,7 @@ const MainSlider = props => {
       }
     }
   `).gcms.posts
+  console.log(posts)
 
   return (
     <div className={styles.container}>

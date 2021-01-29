@@ -1,0 +1,109 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.form label {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-top: 30px;
+}
+
+.input {
+    width: 50%;
+    height: 30px;
+    font-size: 1.4rem;
+    padding: 0 15px;
+    outline: none;
+}
+
+.text_area {
+    height: 150px;
+    resize: none;
+    font-size: 1.4rem;
+    padding: 15px;
+    text-align: justify;
+    outline: none;
+}
+
+.input,
+.text_area {
+    border: 1px solid #e2e2e2;
+}
+
+.text_area:focus,
+.input:focus {
+    border: 1px solid #b9b9b9;
+}
+
+.btn {
+    height: 38px;
+    width: 140px;
+    background-color: var(--colorBlueGreen);
+    border: none;
+    margin-top: 30px;
+    color: white;
+    font-size: 1.4rem;
+    outline: none;
+}
+
+.btn:hover {
+    box-shadow: 1px 2px 4px rgb(202, 202, 202);
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn.down {
+    transform: scale(0.9);
+}
+
+.comments {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+}
+
+.comments h3 {
+    text-align: center;
+    font-weight: 300;
+    font-size: 2.8rem;
+}
+
+.comments_intro {
+    text-align: center;
+    font-weight: 300;
+    font-size: 2.8rem;
+}
+
+.loader_wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 691px) {
+    .form {
+        width: 100%;
+    }
+    .comments {
+        width: 100%;
+    }
+}

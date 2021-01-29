@@ -18,7 +18,7 @@ export default function AboutMe(props) {
           <br /> Pasjonat Programowania.
         </p>
       </div>
-      <ButtonSimple text="Więcej" />
+      <ButtonSimple text="Więcej" route="/About" />
       <Underline styles={underlineStyles} CustomClass={props.underlLineClass} />
     </div>
   )

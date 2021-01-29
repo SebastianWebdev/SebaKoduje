@@ -26,6 +26,7 @@ module.exports = {
           isPopular
           tagi {
             tagName
+            id
           }
           cover {
             url

@@ -1,6 +1,6 @@
 .btn {
   background-color: white;
-  color: #149da2;
+  color: var(--colorBlueGreen);
   border: none;
   padding: 3px 5px;
   border-radius: 7px;

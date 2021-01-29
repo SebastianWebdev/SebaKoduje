@@ -2,8 +2,10 @@ import React, { useEffect } from "react"
 
 import Layout from "../../layout/layout.js"
 import SwitchPosts from "../../components/SwitchPosts"
+import CommentsModule from "../../components/CommentsModule"
 
 import styles from "./BlogPost.module.css"
+import "./blog.css"
 import { section } from "../../styles/content.module.css"
 
 import { graphql } from "gatsby"
@@ -24,9 +26,9 @@ const BlogPost = ({
   }, [])
 
   const img = nodes.filter(node => node.parent.id === pageContext.data.id)[0]
-  console.log(pageContext)
+  console.log(pageContext, "---------------------------------------")
   const tags = pageContext.data.tagi.map(tag => (
-    <div key={tag.id} className={styles.tag}>
+    <div key={tag.id + pageContext.data.id} className={styles.tag}>
       <p className={styles.tag_text}>{tag.tagName}</p>
     </div>
   ))
@@ -61,6 +63,7 @@ const BlogPost = ({
               slug={pageContext.data.slug}
             />
           </section>
+          <CommentsModule postId={pageContext.data.id} />
         </>
       }
     </Layout>

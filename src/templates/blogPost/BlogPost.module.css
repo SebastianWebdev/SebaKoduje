@@ -11,8 +11,10 @@
 }
 .tag {
   margin-right: 30px;
+  font-weight: 500;
 }
 .tittle {
   text-align: center;
   font-weight: 300;
+  font-size: 2.5rem;
 }

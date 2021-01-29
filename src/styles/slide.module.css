@@ -1,60 +1,69 @@
 .img {
-  min-width: 400px;
-  background-color: purple;
-  flex-shrink: 0;
-  background-size: cover;
-  background-position: center;
+    min-width: 400px;
+    background-color: purple;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
 }
+
 .text {
-  min-height: 100%;
-  flex-grow: 1;
-  flex-shrink: 0;
-  border-top: 1px solid #e2e2e2;
-  border-bottom: 1px solid #e2e2e2;
-  border-right: 1px solid #e2e2e2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 18px;
+    min-height: 100%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    width: calc(100% - 400px);
+    border-top: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+    border-right: 1px solid #e2e2e2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 18px;
 }
+
 .container {
-  display: flex;
-  width: 950px;
-  flex-shrink: 0;
-  height: 260px;
+    display: flex;
+    width: 950px;
+    flex-shrink: 0;
+    height: 260px;
 }
+
 .tags_wrap {
-  top: 0;
-  left: 0;
-  display: flex;
-  z-index: 1;
-  width: 100%;
-  justify-content: center;
+    top: 0;
+    left: 0;
+    display: flex;
+    z-index: 1;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
 }
+
 .tag {
-  background-color: #fff;
-  padding: 2px 20px;
-  margin-right: 10px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  letter-spacing: 1px;
+    background-color: #fff;
+    padding: 2px 20px;
+    margin-right: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    width: 120px;
+    margin-bottom: 10px;
 }
 
 .date {
-  font-weight: 200;
-  font-size: 1.2rem;
+    font-weight: 200;
+    font-size: 1.2rem;
 }
 
 @media (max-width: 1366px) {
-  .container {
-    width: 652px;
-  }
+    .container {
+        width: 652px;
+    }
 }
 
 @media (max-width: 996px) {
-  .container {
-    width: 700px;
-  }
+    .container {
+        width: 700px;
+    }
 }
-@media (max-width: 768px) {
-}
+
+@media (max-width: 768px) {}

@@ -7,11 +7,13 @@ import styles from "../styles/card.module.css"
 import Moment from "react-moment"
 import "moment/locale/pl"
 const Card = ({ data, img }) => {
+  console.log(data)
+
   return (
     <div className={styles.container}>
       <div className={styles.tags_wrap}>
         {data.tagi.map(item => (
-          <div key={item.id} className={styles.tag}>
+          <div key={"post" + data.id + Math.random()} className={styles.tag}>
             {item.tagName}
           </div>
         ))}
@@ -36,4 +38,3 @@ const Card = ({ data, img }) => {
   )
 }
 export default Card
-/* */

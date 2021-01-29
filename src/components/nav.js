@@ -43,14 +43,7 @@ const Nav = props => {
             O mnie
           </Link>
         </li>
-        <li>
-          <Link
-            className={`${styles.item} ${url === "/Contact" ? "active" : ""}`}
-            to="/Contact"
-          >
-            Kontakt
-          </Link>
-        </li>
+   
       </ul>
 
       <button

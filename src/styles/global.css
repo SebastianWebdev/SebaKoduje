@@ -1,7 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600&display=swap&subset=latin-ext");
+:root {
+  --colorBlack: #131313;
+  --colorBlueGreen: #149da2;
+}
 body {
   font-family: "Poppins", sans-serif;
-  color: #131313;
+  color: var(--colorBlack);
 }
 * {
   font-family: "Poppins", sans-serif;
@@ -55,11 +59,11 @@ h3 {
 }
 a:hover {
   text-decoration: none;
-  color: #149da2;
+  color: var(--colorBlueGreen);
 }
 a.active {
-  color: #149da2;
-  border-bottom: 1px solid #149da2;
+  color: var(--colorBlueGreen);
+  border-bottom: 1px solid var(--colorBlueGreen);
 
   /*border: 1px solid gray;*/
   /*padding: 3px 5px;

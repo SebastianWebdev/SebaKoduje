@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  align-self: flex-end;
+  margin-bottom: 50px;
+}
+.arrow {
+  height: 30px;
+  width: 30px;
+  opacity: 0.5;
+  transition: opacity 300ms;
+}
+.arrow_right img {
+  transform: rotateZ(180deg);
+}
+.styles.arrow_left {
+}
+.text {
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
+.text p {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 300;
+}
+.active {
+  opacity: 1;
+  cursor: pointer;
+}
