@@ -5,6 +5,7 @@ import styles from "../styles/content.module.css"
 import Articles from "./articles"
 import Tags from "./Tags"
 import SwitchPages from "./UI Elements/SwitchPages"
+
 // helpers function
 const findImgForArticle = (fileArr, postId) => {
   const arr = [...fileArr]
@@ -59,6 +60,7 @@ const Content = props => {
           description
           id
           slug
+          coverAuthor
           tagi {
             tagName
           }
@@ -86,14 +88,13 @@ const Content = props => {
   const [data, setData] = useState(
     combinePostsAndImg(post2.allPost.nodes, post2.allFile.nodes)
   )
-  const maxPages =
-    (data.length / postsLimit) % postsLimit === 0
-      ? Math.floor(data.length / postsLimit)
-      : Math.floor(data.length / postsLimit) + 1
-
+ 
+      const maxPages = Math.ceil(data.length/postsLimit)
+;
   useEffect(() => {
     setActivePosts(findActivePosts(data, [], postsLimit, postsPageNr))
   }, [])
+
   const handleActiveTags = TagName => {
     if (TagName === "Clear all") {
       setActiveTags([])
@@ -114,15 +115,13 @@ const Content = props => {
 
   const handleShiftingPages = (change = 0) => {
     let pageNr = postsPageNr
-    const max =
-      postsLimit === 1
-        ? Math.floor(data.length / postsLimit) - 1
-        : Math.floor(data.length / postsLimit)
+
+    const max = Math.ceil(data.length/postsLimit)
     if (change < 0 && postsPageNr > 0) {
       setpostsPageNr(postsPageNr + change)
       pageNr += change
     }
-    if (change > 0 && postsPageNr < max) {
+    if (change > 0 && postsPageNr < max - 1) {
       setpostsPageNr(postsPageNr + change)
       pageNr += change
     }
@@ -133,7 +132,7 @@ const Content = props => {
   return (
     <>
       <section className={`${styles.section} ${styles.slider_wrap}`}>
-        <MainSlider />
+        <MainSlider imgData={post2.allFile.nodes} />
       </section>
       <Tags handleActiveTags={handleActiveTags} activeTags={activeTags}></Tags>
       <Articles

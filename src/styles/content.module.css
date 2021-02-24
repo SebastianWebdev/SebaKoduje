@@ -1,19 +1,22 @@
 .section {
-  width: 100%;
-  padding-right: 50px;
+    width: 100%;
+    padding-right: 50px;
 }
+
 .slider_wrap {
-  grid-area: slider;
-  display: none;
+    grid-area: slider;
+    display: none;
 }
 
 @media (max-width: 996px) {
-  .section {
-    padding-right: 0px;
-  }
+    .section {
+        padding-right: 0px;
+        justify-content: center;
+    }
 }
+
 @media (min-width: 768px) {
-  .slider_wrap {
-    display: block;
-  }
+    .slider_wrap {
+        display: block;
+    }
 }

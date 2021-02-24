@@ -14,13 +14,17 @@ const MainSlider = props => {
           cover {
             url
           }
+          coverSmall{
+            url
+          }
           date
           tittle
           description
           id
           isPopular
           slug
-          status
+          stage
+          coverAuthor
           tagi {
             tagName
           }
@@ -28,15 +32,16 @@ const MainSlider = props => {
       }
     }
   `).gcms.posts
-  console.log(posts)
-
+  
+const {imgData} = props
+console.log("DAne z props do slajdera", imgData)
   return (
     <div className={styles.container}>
       <div className={styles.slide_container}>
         <Carousel controls={false} fade={false}>
           {posts.map(item => (
             <Carousel.Item key={item.id}>
-              <Slide data={item} />
+              <Slide data={item} imgData={imgData}  />
             </Carousel.Item>
           ))}
         </Carousel>

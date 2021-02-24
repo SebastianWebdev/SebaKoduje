@@ -26,6 +26,9 @@ const Tags = ({ activeTags, handleActiveTags }) => {
           item={item}
         />
       ))}
+      <Tag activeTags={activeTags}
+          handleActive={handleActiveTags}
+          item={{tagName:"Clear all"}}/>
     </section>
   )
 }

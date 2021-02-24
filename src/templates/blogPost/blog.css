@@ -1,9 +1,102 @@
 p {
-  font-size: 1.5rem;
-  font-weight: 300;
-  text-align: justify;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: justify;
 }
+
+h1 {
+    font-size: 4rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
 h2 {
-  font-size: 2.8rem;
-  font-weight: 300;
+    font-size: 2.8rem;
+    font-weight: 400;
+    /*margin-top: 40px;*/
+    margin-bottom: 15px;
 }
+
+h3 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+strong {
+    font-weight: 500;
+}
+
+code {
+    font-size: 1.5rem;
+    background-color: hsla(0, 0%, 0%, 0.04);
+    color: var(--colorBlack);
+    margin-right: 5px;
+}
+
+ul li {
+    padding-left: 15px;
+    font-size: 1.5rem;
+}
+
+pre {
+    border-radius: 10px;
+}
+
+pre code {
+    font-size: 1.4rem
+}
+
+pre[data-copy] {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.copy-img_wrap {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.copy-img_wrap:hover {
+    background-color: rgb(20, 221, 228);
+}
+
+.copy_img {
+    object-fit: contain;
+    width: 20px;
+    pointer-events: none;
+}
+
+.copy-img_wrap span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    touch-action: none;
+    pointer-events: none;
+    background: black;
+    color: white;
+    padding: 5px;
+    transition: 100ms ease-in 500ms;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transform: scale(0.95)
+}
+
+.copy-img_wrap:hover span {
+    transform: translate(-100%, 0%) scale(1);
+    opacity: 1;
+}
+
+.copy-img_wrap:hover .copy_img {}
