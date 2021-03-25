@@ -3,8 +3,6 @@ import styles from "../styles/nav.module.css"
 import { Link } from "gatsby"
 
 const Nav = props => {
-  const url = window.location.pathname
-  console.log(url)
   const [isNavOpen, setIsNavOpen] = useState(false)
   const handleNavButton = e => {
     setIsNavOpen(!isNavOpen)
@@ -20,30 +18,28 @@ const Nav = props => {
       </div>
       <ul className={styles.menu}>
         <li>
-          <Link
-            className={`${styles.item} ${url === "/" ? "active" : ""}`}
-            to="/"
-          >
+          <Link className={`${styles.item} `} to="/" activeClassName="active">
             Blog
           </Link>
         </li>
         <li>
           <Link
-            className={`${styles.item} ${url === "/Projects" ? "active" : ""}`}
+            className={`${styles.item}`}
             to="/Projects"
+            activeClassName="active"
           >
             Projekty
           </Link>
         </li>
         <li>
           <Link
-            className={`${styles.item} ${url === "/About" ? "active" : ""}`}
+            className={`${styles.item} `}
+            activeClassName="active"
             to="/About"
           >
             O mnie
           </Link>
         </li>
-   
       </ul>
 
       <button
