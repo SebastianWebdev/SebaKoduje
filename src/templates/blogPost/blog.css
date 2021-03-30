@@ -30,7 +30,7 @@ strong {
 
 code {
   font-size: 1.5rem;
-  background-color: hsl(0, 0%, 76%);
+
   color: var(--colorBlack);
   margin-right: 5px;
 }
@@ -52,6 +52,7 @@ pre[data-copy] {
   position: relative;
   top: 0;
   left: 0;
+  background-color: hsl(0, 0%, 76%);
 }
 
 .copy-img_wrap {
